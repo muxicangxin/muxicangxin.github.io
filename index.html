@@ -70,6 +70,20 @@ h1{font-size:clamp(40px,6.5vw,68px);line-height:1.08;letter-spacing:-.04em;margi
 .promise{border:1px solid var(--line);border-radius:18px;padding:26px 28px;background:linear-gradient(120deg,rgba(18,24,40,.9),rgba(12,16,28,.75));margin:8px 0 48px}
 .promise-title{font-size:11px;color:var(--cyan);letter-spacing:.16em;margin-bottom:10px}
 .promise h2{font-size:clamp(20px,2.8vw,28px);margin:0 0 12px;font-weight:700}.promise p{font-size:14px;color:var(--muted);line-height:1.85;margin:0}
+.together{margin:8px 0 48px;padding:28px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,rgba(16,22,36,.95),rgba(10,14,24,.92))}
+.together-kicker{font-size:11px;letter-spacing:.16em;color:var(--cyan);margin-bottom:10px}
+.together h2{font-size:clamp(20px,2.8vw,28px);margin:0 0 12px;font-weight:700}
+.together-lead{font-size:14px;color:var(--muted);line-height:1.85;margin:0 0 22px;max-width:48em}
+.together-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.together-card{border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;background:rgba(255,255,255,.02)}
+.together-card h3{font-size:14px;margin:0 0 12px;font-weight:650;color:var(--soft)}
+.together-card ul{margin:0;padding-left:18px}
+.together-card li{font-size:13px;color:var(--muted);line-height:1.85;padding:3px 0}
+.together-card li b{color:var(--text);font-weight:650}
+.together-note{margin-top:16px;padding:14px 16px;border-left:3px solid rgba(139,124,255,.55);background:rgba(139,124,255,.06);border-radius:0 10px 10px 0}
+.together-note p{margin:0;font-size:13px;color:var(--muted);line-height:1.8}
+.together-note code{font-size:12px;color:#c8c0ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+@media(max-width:800px){.together-grid{grid-template-columns:1fr}.together{padding:22px}}
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;margin:0 0 12px;gap:12px}
 .section-head h2{font-size:20px;margin:0;font-weight:700}.section-head span{font-size:12px;color:var(--muted)}
 .section-note{font-size:13px;color:#6e7a94;line-height:1.7;margin:0 0 22px}
@@ -197,6 +211,34 @@ h1{font-size:clamp(40px,6.5vw,68px);line-height:1.08;letter-spacing:-.04em;margi
     <div class="promise-title">不是又一个聊天界面</div>
     <h2>从「会回答」，走向「能持续做事」。</h2>
     <p>这些插件分别处理身份一致性、长期记忆、生活节奏，以及在真实平台上的受控互动。每个项目都有清晰边界和公开源码——你可以先看一个，再决定要不要接入。</p>
+  </section>
+  <section class="together" id="together">
+    <div class="together-kicker">怎么用这些插件</div>
+    <h2>可以单独装，也可以一起用。不是全家桶。</h2>
+    <p class="together-lead">四个仓库是独立的，没有强制安装顺序。组合的价值在于补上能力之间的断层，而不是制造「必须全开才有用」的依赖。</p>
+    <div class="together-grid">
+      <article class="together-card">
+        <h3>单独使用时</h3>
+        <ul>
+          <li><b>人格</b>：只解决身份、人格注入和情绪状态。不碰记忆，也不发起生活行动。</li>
+          <li><b>记忆</b>：只解决「记得住、找得回、分得清谁能看」。不规定人格长什么样。</li>
+          <li><b>生活</b>：管目标、home 会话和行动目录。日记等写入约定落在记忆侧；人格文本不由它维护。</li>
+          <li><b>抖音</b>：只管浏览与受控互动。会话怎么路由、要不要进 home，由生活插件（若已安装）决定。</li>
+        </ul>
+      </article>
+      <article class="together-card">
+        <h3>一起用时实际多了什么</h3>
+        <ul>
+          <li><b>人格 + 记忆</b>：检索和注入可以带着稳定身份与情绪上下文，而不是只有零散文本。</li>
+          <li><b>生活 + 记忆</b>：日记、经历类写入有地方落盘；整理记忆类行动才有对象。</li>
+          <li><b>生活 + 抖音</b>：私信/通知可以被接到 home 或统一接待室，而不是停在浏览器桥这一层。</li>
+          <li><b>生活 + 人格</b>：行动与投递可以按身份判断「是谁」，边界仍然各自守。</li>
+        </ul>
+      </article>
+    </div>
+    <div class="together-note">
+      <p>协作靠服务接口和事件（例如 <code>dyPersona</code>、<code>dyMemory</code>、<code>dyHome.deliver</code>、抖音 watcher），权限和数据范围仍然分插件控制。未安装的一侧不会被假装成已具备；文档里写明是 mock、默认关闭或可降级的，本页也不会写成「已经全能」。</p>
+    </div>
   </section>
   <div id="projects" class="section-head">
     <h2>从你想增强的能力开始</h2>
