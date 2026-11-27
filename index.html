@@ -33,6 +33,22 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:po
 <button class="card douyin" data-project="douyin"><div class="card-top"><span class="card-index">04 / CONNECTION</span><span class="card-icon">⌁</span></div><h3>dsh-douyin</h3><div class="promise">让 AI 理解内容，并在规则内与世界互动。</div><p class="desc">连接抖音浏览、搜索、评论、通知与私信；写操作具备确认、时效、限额和回读验证门禁。</p><div class="card-bottom"><span>抖音 · 浏览 · 受控交互</span><strong>探索模块 ↗</strong></div></button>
 </div>
 <div class="principles"><div class="principle"><b>模块独立</b><p>每个插件有明确职责，不把所有能力塞进一个庞大的系统。</p></div><div class="principle"><b>协作有边界</b><p>通过服务与事件协作，权限、数据范围和执行门禁保持清晰。</p></div><div class="principle"><b>事实可追溯</b><p>展示内容以仓库文档和代码为依据，不把规划中的能力说成已完成。</p></div></div>
+<section class="section" id="architecture" style="padding-top:42px">
+<div class="section-head"><div><div class="section-kicker">WHY THEY WORK TOGETHER</div><h2>可以单独使用，也可以彼此补足。</h2></div><p>四个插件不是必须捆绑安装的一体化套装。它们解决不同问题，通过服务接口与事件连接；组合的价值在于减少能力断层，而不是制造强制依赖。</p></div>
+<div class="feature"><h3>四个插件，各自解决什么</h3><ul>
+<li><b>dsh-persona-core：</b>可单独用于管理身份、人格文本、情绪状态与上下文注入规则。</li>
+<li><b>dsh-memory-core：</b>可单独用于长期记忆、历史原话检索、事实卡、联系人和来源追溯；语义检索依赖 embedding，不可用时降级为关键词检索。</li>
+<li><b>dsh-autonomy：</b>可单独使用目标、状态、home、反思、练习与日志等管理能力；部分跨插件行动需要对应服务，自动 tick 当前仍为 mock / 演练阶段。</li>
+<li><b>dsh-douyin：</b>可单独接入抖音浏览、搜索、评论读取、通知与受控私信等渠道能力；写操作有确认、时效、限额和回读门禁。</li>
+</ul></div>
+<div class="feature"><h3>组合后，具体多了什么</h3><ul>
+<li><b>人格 + 记忆：</b>相关经历可以在权限允许时辅助连续表达；人格插件本身不负责保存记忆。</li>
+<li><b>记忆 + 抖音：</b>观看内容可形成可检索记录，为后续理解提供历史上下文。</li>
+<li><b>自主 + 抖音：</b>通知和私信事件可在显式配置后接入行动流程；不代表默认自动回复。</li>
+<li><b>四者协作：</b>身份与表达、长期信息、行动组织、外部渠道各司其职，形成更连贯的工作流；不意味着已经实现全自动闭环。</li>
+</ul></div>
+<div class="note"><p><b>选型建议：</b>先安装当前最需要的一个插件即可。只有确实需要跨模块连续体验时，再增加其他插件。具体接口、配置与依赖以各仓库 README 和代码为准。</p></div>
+</section>
 </section></main>
 <section id="detail" class="detail" aria-live="polite"></section>
 <footer><span>AI / CAPABILITY LAB</span><span>功能、版本与运行条件以各项目仓库当前文档和代码为准。</span></footer>
